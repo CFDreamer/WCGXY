@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!-- name="包名字  唯一"  namespace="定义包的命名空间  "   extends="继承父类包"
+    访问：   http://localhost:8080/struts2_day01_hello/as/hello.action
+       http://localhost:8080/struts2_day01_hello/命名空间名/acction的名字.action
+    -->
+    <package name="student" namespace="/" extends="struts-default">
+    
+      <!-- 注册的action -->
+      <action name="register" class="com.action.RegisterAction">
+        <result name="exist">/register.jsp</result>
+        <result>/login.jsp</result>
+      </action>
+      
+      
+      <!-- 登录的action -->
+      <action name="login" class="com.action.LoginAction">
+        <result>/main.jsp</result>
+        <result name="fail">/login.jsp</result>
+      </action>
+      
+      <!-- 注销的action -->
+      <action name="loginOut" class="com.action.LoginOutAction">
+        <result>/index.jsp</result>
+      </action>
+ 
+    </package>
+</struts>
